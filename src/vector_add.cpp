@@ -36,8 +36,7 @@ void vector_add() {
   const std::string vector_add_kernel =
 #include "vector_add_kernel.cu"
       ;
-  nvrtc::Program program(vector_add_kernel, "vector_add_kernel", 0, nullptr,
-                         nullptr);
+  nvrtc::Program program(vector_add_kernel, "vector_add_kernel");
   try {
     program.compile(options);
   } catch (nvrtc::Error &error) {
